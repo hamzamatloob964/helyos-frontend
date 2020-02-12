@@ -2,9 +2,7 @@
   <div class="">
     <div class="static block container">
       <!--like or unlike section-->
-      <div class="relative ">
         <div class="lg:absolute sm:relative sm:flex ">
-          <!--Like / Unlike action buttons-->
           <div class="relative flex" v-if="notLiked">
             <!--Thumbs up-->
             <heylo-popup>
@@ -118,11 +116,13 @@
               class="flex items-center flex-shrink-0 text-h-300 hover:text-black p-3 leading-tight h-full cursor-pointer relative"
             >
               <svg width="23" height="21" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M17.1833 35.0342L28.4739 23.7435C28.8048 23.4128 28.9907 22.9641 28.9908 22.4963V2.05665C28.9908 1.08232 28.201 0.29248 27.2267 0.29248H8.12074C7.40597 0.293186 6.76226 0.725111 6.49065 1.38626L1.02879 14.6422C0.853589 15.0687 0.763686 15.5254 0.764162 15.9865V19.6983C0.764162 21.647 2.34385 23.2266 4.2925 23.2266H15.5832L13.5491 31.2183C13.2852 32.2539 13.67 33.3465 14.5247 33.9881L16.0295 35.1171C16.3811 35.3807 16.873 35.3454 17.1833 35.0342ZM32.5192 21.4625H37.8117C38.786 21.4625 39.5758 20.6727 39.5758 19.6983V2.05667C39.5758 1.08234 38.786 0.2925 37.8117 0.2925H32.5192V21.4625Z" fill="black"/>
-</svg>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.1833 35.0342L28.4739 23.7435C28.8048 23.4128 28.9907 22.9641 28.9908 22.4963V2.05665C28.9908 1.08232 28.201 0.29248 27.2267 0.29248H8.12074C7.40597 0.293186 6.76226 0.725111 6.49065 1.38626L1.02879 14.6422C0.853589 15.0687 0.763686 15.5254 0.764162 15.9865V19.6983C0.764162 21.647 2.34385 23.2266 4.2925 23.2266H15.5832L13.5491 31.2183C13.2852 32.2539 13.67 33.3465 14.5247 33.9881L16.0295 35.1171C16.3811 35.3807 16.873 35.3454 17.1833 35.0342ZM32.5192 21.4625H37.8117C38.786 21.4625 39.5758 20.6727 39.5758 19.6983V2.05667C39.5758 1.08234 38.786 0.2925 37.8117 0.2925H32.5192V21.4625Z" fill="black"/>
+            </svg>
             </span>
           </div>
+          <!--Like / Unlike action buttons-->
         </div>
+      <div class="relative ">
         <div class="absolute top-0 mt-3 w-full inline-flex justify-end pr-8 z-2">
           <div class=" relative ">
             <!--Popup: global ownership | earth icon-->

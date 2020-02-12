@@ -15,7 +15,7 @@
             <div class="product-meta relative">
               <span class="capitalize">{{product.brand}}</span>
               <span class="capitalize">{{product.condition}}</span>
-              <span>SKU: {{product.sku.toUpperCase()}}</span>
+              <span>SKU:{{user}} {{product.sku.toUpperCase()}}</span>
             </div>
           </div>
           <div class="flex flex-col items-center relative">
@@ -39,6 +39,7 @@
 <script>
 
   import ProductQuantitySizeButton from '~/components/Product/ProductQuantitySizeButton'
+  import State from '../../store/auth/state';
 
   export default {
     name: 'FeaturedProduct',
@@ -55,10 +56,14 @@
     data() {
       return {
         data: [],
-        descSidebar: false
+        descSidebar: false,
+        user: this.$cookies.get('helyos_user').token
       }
     },
     computed: {
+      // ...mapState('auth/state',[
+      //   'user',
+      // ]),
       maxStock() {
         return this.product.variations.map(item => item.quantity).reduce((current, next) => parseInt(current) + parseInt(next));
       }
@@ -71,7 +76,11 @@
         this.descSidebar = !this.descSidebar
       },
       toggleProductPaymentSidebar() {
-        this.$emit('onShowPaymentSidebar')
+        if(!this.user){
+          this.$emit('onShowPaymentSidebar')
+        }else{
+          this.$router.push('/account')
+        }
       },
       setQuantity(value) {
         this.emit('quantity', value)

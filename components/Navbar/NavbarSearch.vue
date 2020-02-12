@@ -84,7 +84,7 @@
               </ul>
             </ais-hits>
             <div v-if="!hits.length" class="shadow">
-              <p class="py-8 block text-h-400 text-center bg-white">Nothing found for query &quot;<em>{{query}}</em>&quot;
+              <p style="word-wrap:break-word; padding:10px" class="py-8 block text-h-400 text-center bg-white">Nothing found for query <br> &quot;<em>{{query}}</em>&quot;
               </p>
             </div>
             <div class="search-result-overlay" @click.stop="closeSearchResult"></div>

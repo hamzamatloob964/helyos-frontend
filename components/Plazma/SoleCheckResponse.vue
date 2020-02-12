@@ -25,8 +25,11 @@
             <div class="btn btn-cyan boxed" @click="tryAgain">Try again</div>
           </div>  -->
           <div class="flex items-center justify-between my-2">
-            Rate this result
-            <div class="flex mx-3 items-center">
+            Rate this result :
+            <div v-if="smiliBool == true" class="flex mx-3 items-center">
+              <span>Thank you for your Feedback</span>
+            </div>
+            <div v-if="mainBool == true" class="flex mx-3 items-center">
               <div class="cursor-pointer">
                 <svg
                   width="35"
@@ -34,6 +37,7 @@
                   viewBox="0 0 35 35"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  @click="svgClicked"
                 >
                   <path
                     fill-rule="evenodd"
@@ -50,6 +54,7 @@
                   viewBox="0 0 42 41"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  @click="svgClicked"
                 >
                   <path
                     fill-rule="evenodd"
@@ -82,6 +87,8 @@ export default {
   },
   data() {
     return {
+      mainBool:true,
+      smiliBool:false,
       count: 100,
       counting: null,
       loading: null,
@@ -110,6 +117,10 @@ export default {
       clearTimeout(this.loading)
       clearInterval(this.counting)
       this.ready = true
+    },
+    svgClicked () {
+      this.mainBool = false;
+      this.smiliBool = true;
     }
   },
   computed: {

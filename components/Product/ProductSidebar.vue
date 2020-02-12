@@ -13,6 +13,8 @@
               <svg
                 viewBox="0 0 123 98"
                 fill="none"
+                width="50px"
+                height="50px"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -381,8 +383,8 @@ this.show = false;
         }
 
         .thumb {
-          width: 60px;
-          height:60px;
+          width: 50px;
+          height:50px;
           position: relative;
           overflow: hidden;
           @apply object-fill object-center mr-8 rounded-lg flex justify-center items-center;

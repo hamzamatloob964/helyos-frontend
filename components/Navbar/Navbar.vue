@@ -92,7 +92,7 @@
       },
       goToPlazma() {
         console.log('here');
-          this.$router.push('/plazma')
+        this.$router.push('/plazma')
         // if (this.user.subscription) {
         //   this.$router.push({name: 'plazma'})
         // }
