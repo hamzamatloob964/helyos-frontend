@@ -15,7 +15,7 @@
             <div class="product-meta relative">
               <span class="capitalize">{{product.brand}}</span>
               <span class="capitalize">{{product.condition}}</span>
-              <span>SKU:{{user}} {{product.sku.toUpperCase()}}</span>
+              <span>SKU:{{product.sku.toUpperCase()}}</span>
             </div>
           </div>
           <div class="flex flex-col items-center relative">
@@ -76,10 +76,10 @@
         this.descSidebar = !this.descSidebar
       },
       toggleProductPaymentSidebar() {
-        if(!this.user){
+        if(this.user){
           this.$emit('onShowPaymentSidebar')
         }else{
-          this.$router.push('/account')
+          this.$router.push({name: 'auth-sign-up'})
         }
       },
       setQuantity(value) {

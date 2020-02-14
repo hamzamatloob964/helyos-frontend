@@ -21,7 +21,7 @@
 <script>
   export default {
     name: 'privacy',
-    layout: 'deliverable',
+    // layout: 'deliverable',
     data() {
       return {
         loaded: false

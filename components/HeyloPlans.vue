@@ -1,7 +1,7 @@
 <template>
   <div class="block h-screen">
     <transition name="fade">
-      <wait-loader :timeout="1000" @onWaitComplete="onWaitLoaded" v-if="!loaded">
+      <wait-loader :timeout="20000" @onWaitComplete="onWaitLoaded" v-if="!loaded">
         <p class="font-bold font-sans w-full mx-1">Please wait... You’re currently placed on a waiting list to sign up.
           If
           you’re rejected please try again
@@ -142,7 +142,7 @@
     background: #FFFFFF;
     border-radius: 5px;
     border: 2px solid #C4C4C4;
-    width: 100%;
+    width: 85%;
     margin: 30px 15px;
     @apply px-1;
     .plan-card {

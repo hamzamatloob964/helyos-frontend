@@ -23,7 +23,7 @@
 <script>
   export default {
     name: 'report-bug',
-    layout: 'deliverable',
+    // layout: 'deliverable',
     methods: {
       handleSubmit(e) {
         e.preventDefault()

@@ -4,7 +4,7 @@
       <div class="headline mb-2 font-bold">
         Associates Hub
       </div>
-      <div class="text-center font-semibold">
+      <div style="margin-top:30px;" class="text-center font-semibold">
         Welcome to Helyos Associates Hub (H.A.H.) because you’ll be laughing to
         the bank
       </div>

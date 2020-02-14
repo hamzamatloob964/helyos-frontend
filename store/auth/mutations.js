@@ -15,6 +15,10 @@ export default {
     this.$cookies.set('helyos_seller', state.seller);
   },
 
+  UPDATE_BOOL_DATA (state, bool) {
+    state.bool = bool;
+  },
+
 
   SAVE_AUTH_USER(state, user) {
     state.authenticated = true;

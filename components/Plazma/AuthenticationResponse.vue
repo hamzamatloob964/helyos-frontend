@@ -32,7 +32,7 @@
             </svg>
           </span>
           <div slot="content">
-            <div class="helptip ">
+            <div class="helptip p-5 ">
               <div class="flex items-center m-2">
                 <svg
                   width="70"
@@ -175,12 +175,12 @@
                     Try again
                   </div>
                 </div>
-                <div class="flex items-center justify-between">
-                  Rate this result :
-                  <div v-if="smiliBool == true" class="flex mx-3 items-center">
+                  <div v-if="smiliBool == true" style="margin-top:10px;" class="flex mx-3 items-center">
                     <span>Thank you for your Feedback</span>
                   </div>
-                  <div v-if="mainBool == true" class="flex mx-3 items-center">
+                <div v-if="mainBool == true" class="flex items-center justify-between">
+                  Rate this result :
+                  <div class="flex mx-3 items-center">
                     <div class="cursor-pointer">
                       <svg
                         width="35"

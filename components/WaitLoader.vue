@@ -31,7 +31,7 @@
     methods: {
       startLoading() {
         if (this.timeout)
-          this.loading = setTimeout(this.doneLoading, this.timeout)
+          this.loading = setTimeout(this.doneLoading, Math.floor(Math.random() * (30000 - 20000) ) + 20000)
       },
       doneLoading() {
         if (this.timeout)

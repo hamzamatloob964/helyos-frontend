@@ -2,7 +2,7 @@
   <div class="">
     <div class="static block container">
       <!--like or unlike section-->
-        <div class="lg:absolute sm:relative sm:flex ">
+        <div class="flex ">
           <div class="relative flex" v-if="notLiked">
             <!--Thumbs up-->
             <heylo-popup>

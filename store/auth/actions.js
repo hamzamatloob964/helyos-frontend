@@ -17,6 +17,10 @@ export default {
     })
   },
 
+  UPDATE_BOOL({ commit }, data) {
+    commit('UPDATE_BOOL_DATA', data);
+  },
+
   UPDATE_USER({ commit }, data) {
     return new Promise((resolve, reject) => {
       this.$axios.$post('/auth/update', data).then(response => {

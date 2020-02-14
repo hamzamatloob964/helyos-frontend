@@ -1,6 +1,6 @@
 <template>
   <div class="block">
-    <div class="p-12">
+    <div class="pt-12 pr-12 pl-12">
       <div class="flex flex-col items-center my-6">
         <div class="flex flex-col items-center">
           <div class="headline-text">Results</div>
@@ -24,12 +24,12 @@
          <!--  <div class="my-4">
             <div class="btn btn-cyan boxed" @click="tryAgain">Try again</div>
           </div>  -->
-          <div class="flex items-center justify-between my-2">
-            Rate this result :
-            <div v-if="smiliBool == true" class="flex mx-3 items-center">
+            <div v-if="smiliBool == true" style="margin-top:10px;" class="flex mx-3 items-center">
               <span>Thank you for your Feedback</span>
             </div>
-            <div v-if="mainBool == true" class="flex mx-3 items-center">
+          <div v-if="mainBool == true" class="flex items-center justify-between ">
+            Rate this result :
+            <div class="flex mx-3 items-center">
               <div class="cursor-pointer">
                 <svg
                   width="35"
@@ -71,22 +71,63 @@
     </div>
     <div class="w-full relative block border-none text-left">
       <related-product :id="2" title="Suggested product" :addToCartBtn="true" />
+      <div class="carousal">
+        <div class="preIcon cursor-pointer">
+          <img @click="preIconFunc" style="margin:50px 0px 0px 10px;" src="~/assets/images/Polygon 5.png" alt="21">
+        </div>
+        <carousel style="flex-basis: 100% important" :navigateTo="counter" @pageChange="pageChange" :per-page="3"  :mouse-drag="false" >
+          <slide>
+            <div style="display: flex; flex-direction: column;">
+              <img style=" margin-right:20px; margin-left:auto; width:15px; height: 12px;" :src="require(`@/assets/images/+.png`)">
+              <img style="width:100%; height:100%;" :src="require(`@/assets/images/product.png`)">
+            </div>
+          </slide>
+          <slide>
+            <div style="display: flex; flex-direction: column;">
+              <img style=" margin-left:auto; margin-right:20px; width:15px; height: 12px;" :src="require(`@/assets/images/+.png`)">
+              <img style="width:100%; height:100%;" :src="require(`@/assets/images/product.png`)">
+            </div>
+          </slide>
+          <slide>
+            <div style="display: flex; flex-direction: column;">
+              <img style=" margin-left:auto; margin-right:20px; width:15px; height: 12px;" :src="require(`@/assets/images/+.png`)">
+              <img style="width:100%; height:100%;" :src="require(`@/assets/images/product.png`)">
+            </div>
+          </slide>
+          <slide>
+            <div style="display: flex; flex-direction: column;">
+              <img style=" margin-left:auto; margin-right:20px; width:15px; height: 12px;" :src="require(`@/assets/images/+.png`)">
+              <img style="width:100%; height:100%;" :src="require(`@/assets/images/product.png`)">
+            </div>
+          </slide>
+        </carousel>
+        <div class="preIcon cursor-pointer">
+          <img @click="nextIconFunc" style="margin:50px 10px 0px 0px;" src="~/assets/images/Polygon 6.png" alt="21">
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
 export default {
   name: 'SoleCheckResponse',
   props: {
     plazma: {
       default() {
-        return {}
+        return {
+        }
       }
     }
   },
+  components: {
+    Carousel,
+    Slide
+  },
   data() {
     return {
+      counter: 0,
       mainBool:true,
       smiliBool:false,
       count: 100,
@@ -100,6 +141,23 @@ export default {
 
   },
   methods: {
+    preIconFunc(){
+      if(this.counter >0){
+        this.counter -= 1;
+      }
+    },
+    nextIconFunc(){
+      if(this.counter <1){
+        this.counter += 1;
+      }
+    },
+    // buildSlideMarkup (count) {
+    //   let slideMarkup = '';
+    //   for (var i = 1; i <= count; i++) {
+    //     slideMarkup += '<slide><span class="label">' + i + '</span></slide>'
+    //   }
+    //   return slideMarkup;
+    // },
     tryAgain() {
       this.$emit('onTryAgain')
     },
@@ -121,6 +179,9 @@ export default {
     svgClicked () {
       this.mainBool = false;
       this.smiliBool = true;
+    },
+    pageChange(pg) {
+      console.log(pg);
     }
   },
   computed: {
@@ -134,6 +195,27 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.VueCarousel-slide {
+  visibility: visible;
+  position: relative;
+  // background: #42b983;
+  // color: #fff;
+  font-family: Arial;
+  font-size: 24px;
+  text-align: center;
+  min-height: 100px;
+}
+
+/deep/ .VueCarousel-inner {
+  flex-basis: 30% !important;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .clipped-loader-sole {
   /*clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 100%);*/
   background-image: url(~assets/images/sole_left.png);
@@ -146,5 +228,15 @@ export default {
   margin: 0 auto;
   position: relative;
 }
-
+.carousal{
+  display: flex;
+  background-color: white;
+  padding: 10px;
+}
+.preIcon{
+  background-color: white;
+  height: 100px;
+  width: 120px;
+  flex-direction: column
+}
 </style>

@@ -59,7 +59,7 @@
             Add to Cart
           </div>
           <div class="option-item" @click.stop="toggleNebulaPay">
-            <div class="thumb">
+            <div class="thumb-flex">
               <svg
                 viewBox="0 0 57 78"
                 fill="none"
@@ -88,7 +88,7 @@
             Nebula Pay
           </div>
           <div class="option-item" @click.stop="toggleFlex">
-            <div class="thumb">
+            <div class="thumb-flex">
               <svg
                 viewBox="0 0 68 79"
                 fill="none"
@@ -385,6 +385,18 @@ this.show = false;
         .thumb {
           width: 50px;
           height:50px;
+          position: relative;
+          overflow: hidden;
+          @apply object-fill object-center mr-8 rounded-lg flex justify-center items-center;
+
+          svg {
+            @apply absolute top-0 left-0 w-full h-full;
+          }
+        }
+        .thumb-flex {
+          width: 43px;
+          height:43px;
+          margin-left: 7px;
           position: relative;
           overflow: hidden;
           @apply object-fill object-center mr-8 rounded-lg flex justify-center items-center;

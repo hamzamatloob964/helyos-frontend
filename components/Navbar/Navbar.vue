@@ -91,18 +91,14 @@
 
       },
       goToPlazma() {
-        console.log('here');
-        this.$router.push('/plazma')
-        // if (this.user.subscription) {
-        //   this.$router.push({name: 'plazma'})
-        // }
-        // else {
-        //   this.$refs['no-entry'].toggleState()
-        // }
+        if (this.user.subscription) {
+          this.$router.push({name: 'plazma'})
+        }
+        else {
+          this.$refs['no-entry'].toggleState()
+        }
       },
       goToDelphi() {
-        
-          // this.$router.push({ name: 'delphi'})
         if(this.user.subscription) {
           this.$router.push({ name: 'delphi'})
         } else {

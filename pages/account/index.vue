@@ -42,18 +42,19 @@
         <section>
           <!--Left side-->
           <!-- <div class="lg:w-1/3 w-full" v-if="form"> -->
-          <div class="flex mb-4" v-if="form">
-            <div class="w-1/4">
+          <div  class="flex mb-4" v-if="form">
+            <div class="main-custom-card">
               <div class="custom-card">
-                <li class="link" :class="{'activated': showMembership}" @click="toggleMembership()"  v-if="user.subscription">
+                <li class="link" :class="{'activated': showMembership}" @click="toggleMembership()"  v-if="user.subscription || true">
                   Membership
                 </li>
                 <li class="link" :class="{'activated': showAccount}" @click="toggleAccount()">Account Information</li>
                 <li class="link" :class="{'activated': showChangePassword}" @click="toggleChangePassword()">Change Password</li>
               </div>
             </div>
-            <div class="ml-6 w-3/4 custom-card">
+            <div class="ml-6 custom-card">
               <section v-if="showAccount">
+                
                 <p class="sub-headline ml-4">Account</p>
                 <div class="flex form w-full">
                   <div class="form-control-group w-1/2 p-2" >
@@ -195,12 +196,13 @@
               </section>
 
               <section v-if="showMembership">
-                <div class="w-full" v-if="user.subscription">
+                <div class="w-full" v-if="!user.subscription">
                   <div class="flex lg:justify-end">
                     <nuxt-link
                       title="cancle membership"
                       :to="{ name: 'account-terminate' }"
                       class="btn btn-blue"
+                      style="border-radius: 4px"
                       >Cancel membership</nuxt-link
                     >
                   </div>
@@ -208,10 +210,12 @@
                     <div class="lg:w-full">
                       <div class="visa-notice w-full">
                         <p class="w-full flex-auto lg:mx-6">
-                          Card ending in {{ user.card.last_four }}
+                            Card ending in 34 days<br>
+                            Membership expires:<br>
+                            Account will renew:<br>
                         </p>
                         <div class="flex items-center ">
-                          <div class="coat green primary mr-4">Primary</div>
+                          <div style="border-radius: 4px" class="coat green primary ml-5 mr-4">Primary</div>
                           <span class="text-4xl mr-4 cursor-pointer"
                             >&times;</span
                           >
@@ -221,7 +225,7 @@
                         class="my-2 flex flex-wrap items-end justify-between w-full"
                       >
                         <div class="my-3">
-                          <strong
+                          <!-- <strong
                             class="block"
                             :title="
                               `membership expires in ${formatDate(
@@ -241,9 +245,9 @@
                           >
                             Account will renew:
                             {{ addDates(user.subscription.ends_at, 1) }}
-                          </strong>
+                          </strong>-->
                         </div>
-                        <div class="my-3">
+                        <div class="my-3"> 
                           <p>Change Payment option</p>
                         </div>
                       </div>
@@ -360,6 +364,7 @@ export default {
   methods: {
     logout() {
       this.$store.dispatch('auth/LOGOUT_USER').then(_ => this.$router.push('/'))
+      window.location.reload();
     },
     update() {
       this.loading = true

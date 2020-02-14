@@ -2,6 +2,7 @@
   <ais-instant-search ref="instant-search"
                       :search-client="client" :search-function="searchFunction" index-name="products"
   >
+        <Animation />
     <navbar/>
     <div class="mt-6">
       <div class="container">
@@ -9,7 +10,7 @@
           <div class="inline-block relative">
             Delphi
             <nuxt-link :to="{name: 'delphi'}" class="absolute bottom-0 right-0 -mr-6">
-              <svg width="20" height="20" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg style="margin-bottom:3px;" width="20" height="20" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M0 7.46308L6.37937 0H26V18.7806L19.7639 26H0V7.46308Z"
                       fill="#0000FF"/>
@@ -28,6 +29,7 @@
 </template>
 
 <script>
+  import Animation from '../components/Animation/Animation'
   import algoliasearch                from 'algoliasearch/lite'
   import { history as historyRouter } from 'instantsearch.js/es/lib/routers'
   import { simple as simpleMapping }  from 'instantsearch.js/es/lib/stateMappings'
@@ -38,6 +40,7 @@
     name: 'delphi',
     data() {
       return {
+        bool:true,
         routing: {
           router: historyRouter(),
           stateMapping: simpleMapping()
@@ -56,6 +59,9 @@
           
         }
       }
+    },
+    components:{
+      Animation
     },
     computed: {
       ...mapGetters({ client: 'search/searchClient' })

@@ -3,11 +3,11 @@
     <div>
       <h3 class="headline-sm bg-black inline-block text-white px-4 py-2 my-4 title-bg">{{title}}</h3>
     </div>
-    <div class="rounded-lg">
+    <!-- <div class="rounded-lg"> -->
       <!--TODO: Use the ID to get related products for that particular ID-->
       <!--List the related products from the current product ID-->
 
-      <div class="block">
+      <!-- <div class="block">
         <heylo-swiper class="below" :loop="true" :freeMode="true" :breakpoints="breakpoints" :centeredSlides="false" :autoplay="true" :navigation="false">
           <swiper-slide v-for="(product, index) in relatedProducts" class=""
                         :key="`single-product-slider-${index}-${product.id}`">
@@ -15,7 +15,7 @@
           </swiper-slide>
         </heylo-swiper>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -38,7 +38,7 @@
         type: String
       },
       relatedProducts: {
-        default: [],
+        default: () => [],
         type: Array
       } 
     },
@@ -77,4 +77,5 @@
   .title-bg {
     background-color: #323232 !important;
   }
+  
 </style>

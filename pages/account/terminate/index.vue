@@ -4,7 +4,7 @@
       <div class="mt-16  flex justify-center">
         <div class="">
           <div class="headline font-bold flex-auto w-11/12 text-center">
-            My Account
+            My Account 
           </div>
           <transition name="fade">
             <component :is="dynamicComponent" :user="user" @onTerminate="nextComponent"></component>

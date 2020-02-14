@@ -1,8 +1,9 @@
 <template>
   <div class="p-2 lg:w-5/6 md:w-5/6 mx-auto lg:border md:border border-gray-300 h-screen">
     <transition name="fade">
-      <wait-loader @onWaitComplete="onWaitLoaded" v-if="!loaded"/>
-      <div class="block my-16" v-else>
+      <!-- <wait-loader @onWaitComplete="onWaitLoaded" v-if="!loaded"/> -->
+      <!-- <div class="block my-16" v-else> -->
+      <div class="block my-16">
         <div class="headline-lg text-center font-bold">
           FAQ
         </div>
@@ -39,7 +40,7 @@
 <script>
   export default {
     name: 'faq',
-    layout: 'deliverable',
+    // layout: 'deliverable',
     data() {
       return {
         loaded: false

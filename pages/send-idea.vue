@@ -23,7 +23,7 @@
 <script>
   export default {
     name: 'send-idea',
-    layout: 'deliverable',
+    // layout: 'deliverable',
     methods: {
       handleSubmit(e) {
         e.preventDefault()

@@ -1,3 +1,4 @@
+
 <template>
   <div class="p-2 lg:w-5/6 md:w-5/6 mx-auto lg:border md:border border-gray-300 h-screen">
     <transition name="fade">
@@ -20,7 +21,7 @@
 <script>
   export default {
     name: 'terms',
-    layout: 'deliverable',
+    // layout: 'deliverable',
     data() {
       return {
         loaded: false

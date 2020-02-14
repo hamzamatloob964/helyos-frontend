@@ -84,7 +84,8 @@
                     <li @click.stop="togglePlazmaModal" class="nowrap-text block no-underline px-4 py-2 hover:bg-h-100">
                       Plazma
                     </li>
-                    <li class="nowrap-text block no-underline px-4 py-2 hover:bg-h-100" @click.stop="toggleDelphiModal">Delphi
+                    <li class="nowrap-text block no-underline px-4 py-2 hover:bg-h-100" @click.stop="toggleDelphiModal">
+                      Delphi
                       
                     </li>
                     <li>

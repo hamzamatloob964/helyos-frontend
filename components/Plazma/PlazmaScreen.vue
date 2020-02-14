@@ -12,7 +12,7 @@
           <div class="flex justify-center">
             <!--            Click to toggle modal for dropzone-->
             <div class="sole-placeholder cursor-pointer" @click.stop="authenticate()">
-              <img src="~/assets/images/sole_left.png" alt="">
+              <img style="width:250px; height:120px;" src="~/assets/images/sole_left.png" alt="">
               <div class="headline-lg font-bold mt-10">Authentication</div>
             </div>
           </div>
@@ -20,8 +20,8 @@
           <div class=" flex justify-center">
             <!--            Click to toggle modal for dropzone-->
             <div class="sole-placeholder cursor-pointer" @click.stop="checkSole()">
-              <img src="~/assets/images/sole_right.png" alt="">
-              <div class="headline-lg font-bold mt-10">Sole Check</div>
+              <img style="width:110px; height:200px;" src="~/assets/images/sole_right.png" alt="">
+              <div class="headline-lg font-bold mt-6">Sole Check</div>
             </div>
           </div>
         </div>
